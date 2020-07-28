@@ -1,2 +1,2 @@
 # telegram-bot-carrefour
-This Telegram Bot API helps users with finding the closest location of Carrefour.
+This Telegram Bot API helps users to find the closest location of Carrefour
