@@ -1,0 +1,14 @@
+{
+  "name": "telegram-bot-carrefour",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/CiceroGB/telegram-bot-carrefour.git",
+  "author": "Cicero Brunelli <cicero.brunelli@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.50.0"
+  },
+  "scripts": {
+    "telegram": "node src/index.js"
+  }
+}
