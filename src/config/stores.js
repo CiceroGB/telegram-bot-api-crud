@@ -1,3 +1,3 @@
 module.exports = {
-    idClientCarrefour: '__TELEGRAM_BOT_TOKEN__',
+    idClientCarrefour: '563d8a52-c2db-40f4-84e2-2c2caae4126f',
   };

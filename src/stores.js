@@ -1,18 +1,29 @@
 
-const request = require("request");
+const axios = require('axios');
 
-const options = { method: 'GET',
-  url: 'https://api2.carrefour.com.br/cci/publico/cadastro-lojas-complemento/cadastro-lojas-complemento',
-  qs: 
-   { site: 'REPLACE_THIS_VALUE',
-     latitude: 'REPLACE_THIS_VALUE',
-     longitude: 'REPLACE_THIS_VALUE' },
-  headers: 
-   { accept: 'application/json',
-     'x-ibm-client-id': 'REPLACE_THIS_KEY' } };
 
-request(options, function (error, response, body) {
-  if (error) return console.error('Failed: %s', error.message);
+const searchStore = (latitude, longitude) => {
 
-  console.log('Success: ', body);
-});
+  axios.get('https://api2.carrefour.com.br/cci/publico/cadastro-lojas-complemento/cadastro-lojas-complemento',
+    {
+      headers: {
+        'Content-Type': 'application/json',
+        'x-ibm-client-id': '563d8a52-c2db-40f4-84e2-2c2caae4126f'
+      },
+      params: {
+        latitude: `${latitude}`,
+        longitude: `${longitude}`
+
+      },
+    })
+    .then((response) => {
+      const stores = (response.data)
+      console.log(stores)
+    }, (error) => {
+      console.log(error);
+    });
+
+}
+
+export default searchStore();
+

@@ -6,7 +6,9 @@
   "author": "Cicero Brunelli <cicero.brunelli@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "node-telegram-bot-api": "^0.50.0"
+    "axios": "^0.19.2",
+    "node-telegram-bot-api": "^0.50.0",
+    "request": "^2.88.2"
   },
   "scripts": {
     "telegram": "node src/index.js"
