@@ -4,7 +4,7 @@ const axios = require('axios');
 
 const searchStore = (latitude, longitude) => {
 
-  axios.get('https://api2.carrefour.com.br/cci/publico/cadastro-lojas-complemento/cadastro-lojas-complemento',
+  return axios.get('https://api2.carrefour.com.br/cci/publico/cadastro-lojas-complemento/cadastro-lojas-complemento',
     {
       headers: {
         'Content-Type': 'application/json',
@@ -17,13 +17,12 @@ const searchStore = (latitude, longitude) => {
       },
     })
     .then((response) => {
-      const stores = (response.data)
-      console.log(stores)
+      const stores = (response.data);
+      return stores;
     }, (error) => {
-      console.log(error);
+      return 'Ooops! Algo deu errado tente novamente';
     });
 
 }
 
-export default searchStore();
-
+module.exports.searchStore = searchStore;
