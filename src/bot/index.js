@@ -12,16 +12,26 @@ const bot = new TelegramBot(token, { polling: true });
 
 
 bot.on('text', async (msg) => {
-        const chatId = msg.chat.id;
-        const greetingMessage = `Olá ${msg.from.first_name}, compartilhe sua localização para encontrarmos uma loja pertinho de você com ofertas exclusivas Telegram Carrefour`;
-        bot.sendMessage(chatId, greetingMessage);
+    const chatId = msg.chat.id;
+    const greetingMessage = `Olá ${msg.from.first_name}, compartilhe sua localização para encontrarmos uma loja pertinho de você com ofertas exclusivas Telegram Carrefour`;
+    bot.sendMessage(chatId, greetingMessage,{
+        "parse_mode": "Markdown",
+        "reply_markup": {
+            "one_time_keyboard": true,
+            "keyboard": [[{
+                text: "Compartilhar Localização",
+                request_location: true
+            }], ["Cancelar"]]
+        }
+    })
 });
+
 
 
 bot.on('location', async msg => {
     const chatId = msg.chat.id;
     try {
-        const { latitude, longitude} = msg.location;
+        const { latitude, longitude } = msg.location;
         const localStore = await mapStores.mapStores(latitude, longitude);
         bot.sendMessage(chatId, localStore);
     } catch (e) {
