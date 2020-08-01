@@ -1,7 +1,7 @@
 const TelegramBot = require('node-telegram-bot-api');
 const mapStores = require('./mapStores');
 
-const telegramConfig = require('./config/telegram');
+const telegramConfig = require('../config/telegram');
 
 
 const { botToken } = telegramConfig;

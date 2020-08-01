@@ -6,7 +6,7 @@ const mapStores = async (latitude , longitude ) => {
     
     const near = storesArray.reduce((prev, current) => (prev.location.distance < current.location.distance) ? prev : current);
 
-    if (near.location.distance <= 1){
+    if (near.location.distance >= 1){
         const  message = `Parece que você não está dentro de uma loja Carrefour ainda!;
      Bora na mais perto de você!
      Loja: ${near.name}
