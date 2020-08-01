@@ -17,8 +17,8 @@ const searchStore = (latitude, longitude) => {
       },
     })
     .then((response) => {
-      const stores = (response.data);
-      return stores;
+      const storesJson = (response.data.data);
+      return storesJson;
     }, (error) => {
       return 'Ooops! Algo deu errado tente novamente';
     });
