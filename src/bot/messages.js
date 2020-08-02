@@ -1,7 +1,7 @@
 require('dotenv/config');
 const axios = require('axios');
 
-const searchMessage = (store) => axios.get(`${process.env.APP_URL}/messages/${store}/stores`,
+const searchMessage = (store) => axios.get(`${process.env.APP_URL}${process.env.APP_PORT}/messages/${store}/stores`,
   {
     params: {
       date: new Date().getTime(),

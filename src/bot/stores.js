@@ -1,10 +1,11 @@
+require('dotenv/config');
 const axios = require('axios');
 
-const searchStore = (latitude, longitude) => axios.get('https://api2.carrefour.com.br/cci/publico/cadastro-lojas-complemento/cadastro-lojas-complemento',
+const searchStore = (latitude, longitude) => axios.get(process.env.API_URL,
   {
     headers: {
       'Content-Type': 'application/json',
-      'x-ibm-client-id': '563d8a52-c2db-40f4-84e2-2c2caae4126f',
+      'x-ibm-client-id': process.env.API_ID,
     },
     params: {
       latitude: `${latitude}`,
