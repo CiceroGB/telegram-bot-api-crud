@@ -3,6 +3,7 @@
 # Sem nome ainda
 
 Telegram Chatbot, onde o usuário ao compartilhar sua localização:
+
 Se dentro de uma loja Carrefour trás uma mensagem daquela Loja e promoções exclusivas para o usuário.
 
 ![](https://media.giphy.com/media/J5pz2cuqRiPQe1etRr/giphy.gif)
