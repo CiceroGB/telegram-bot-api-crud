@@ -16,7 +16,9 @@ Se não estiver dentro de uma loja Carrefour trará a localização da loja Carr
 
 
 
-Desenvolvido Telegram Bot e a API REST com login e autenticação para o funcionário Carrefour gerenciar as mensgens e promoções
+Desenvolvido Telegram Bot e a API REST com login e autenticação para o funcionário Carrefour gerenciar as mensgens e promoções.
+A idéia principar é tornar atrativo que o cliente use o TelegramBot, pois somente nele e dentro da loja recebará promoções, e
+permite interação do Carrefour com esse cliente.
 
 Ferramenta para o Tech Challenge da Digital Innovation One e do Grupo Carrefour. 
 
