@@ -8,6 +8,6 @@ const searchMessage = (store) => axios.get(`${process.env.APP_URL}/messages/${st
 
     },
   })
-  .then((response) => response.data, () => 'Ooops! Algo deu errado tente novamente');
+  .then((response) => response.data);
 
 module.exports.searchMessage = searchMessage;

@@ -8,8 +8,8 @@ module.exports = {
         product: 'Cerveja Hoegaarden',
         price: 7.99,
         promotional_price: 4.99,
-        created_at: new Date().toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' }),
-        updated_at: new Date().toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' }),
+        created_at: new Date(),
+        updated_at: new Date(),
 
       });
       data.push({
@@ -17,8 +17,8 @@ module.exports = {
         product: 'Picanha Montana',
         price: 61.99,
         promotional_price: 49.99,
-        created_at: new Date().toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' }),
-        updated_at: new Date().toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' }),
+        created_at: new Date(),
+        updated_at: new Date(),
       });
     }
     return queryInterface.bulkInsert('promotions', data);

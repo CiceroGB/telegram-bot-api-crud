@@ -6,8 +6,8 @@ module.exports = {
       data.push({
         store: i,
         message: 'Chegou novo álcool em gel hidratante confira no corredor 6',
-        created_at: new Date().toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' }),
-        updated_at: new Date().toLocaleString('en-US', { timeZone: 'America/Sao_Paulo' }),
+        created_at: new Date(),
+        updated_at: new Date(),
       });
     }
     return queryInterface.bulkInsert('messages', data);

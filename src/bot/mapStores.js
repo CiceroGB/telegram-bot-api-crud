@@ -5,6 +5,10 @@ const promotions = require('./promotions');
 const mapStores = async (latitude, longitude) => {
   const storesObj = await stores.searchStore(latitude, longitude);
 
+  if (storesObj === 'Ooops! Algo deu errado tente novamente') {
+    return 'Ooops! Algo deu errado tente novamente';
+  }
+
   const near = storesObj.reduce((prev, current) => (
     (prev.location.distance < current.location.distance) ? prev : current));
 
@@ -30,8 +34,10 @@ const mapStores = async (latitude, longitude) => {
     { style: 'currency', currency: 'BRL' }).format(o.promotional_price)} `)}
     Para aproveitar essas ofertas basta informar o código 842jj99 no caixa    
     `;
-
+  console.log(txt);
   return txt;
 };
+
+mapStores(-20.8351067, -49.398587);
 
 module.exports.mapStores = mapStores;

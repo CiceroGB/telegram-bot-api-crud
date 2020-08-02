@@ -15,6 +15,6 @@ const searchStore = (latitude, longitude) => axios.get('https://api2.carrefour.c
   .then((response) => {
     const storesJson = (response.data.data);
     return storesJson;
-  }, () => 'Ooops! Algo deu errado tente novamente');
+  }, () => 'error');
 
 module.exports.searchStore = searchStore;

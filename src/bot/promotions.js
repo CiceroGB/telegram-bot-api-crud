@@ -8,7 +8,7 @@ const searchPromotion = (store) => axios.get(`${process.env.APP_URL}/promotions/
 
     },
   })
-  .then((response) => response.data, () => 'Ooops! Algo deu errado tente novamente');
+  .then((response) => response.data);
 
 searchPromotion(5);
 
