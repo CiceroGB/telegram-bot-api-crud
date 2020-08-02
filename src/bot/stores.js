@@ -13,9 +13,6 @@ const searchStore = (latitude, longitude) => axios.get(process.env.API_URL,
 
     },
   })
-  .then((response) => {
-    const storesJson = (response.data.data);
-    return storesJson;
-  }, () => 'error');
+  .then((response) => response.data.data, () => 'error');
 
 module.exports.searchStore = searchStore;

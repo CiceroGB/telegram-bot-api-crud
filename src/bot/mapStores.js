@@ -5,7 +5,7 @@ const promotions = require('./promotions');
 const mapStores = async (latitude, longitude) => {
   const storesObj = await stores.searchStore(latitude, longitude);
 
-  if (storesObj === 'Ooops! Algo deu errado tente novamente') {
+  if (storesObj === 'error') {
     return 'Ooops! Algo deu errado tente novamente';
   }
 
@@ -19,11 +19,14 @@ const mapStores = async (latitude, longitude) => {
      Endereço: ${near.street}, ${near.number}, ${near.neighborhood}, ${near.city} - ${near.state}, CEP: ${near.postal_code}
     
      Ei :) , dentro da loja compartilhe novamente sua localização para ver as ofertas exclusisas Telegram Carrefour`;
-    console.log(txt);
     return txt;
   }
 
   const promotionsArray = await promotions.searchPromotion(near.site);
+
+  if (promotionsArray === 'error') {
+    return 'Ooops! Algo deu errado tente novamente';
+  }
 
   let promotionsText = 'Nenhuma oferta para esta unidade no momento :(';
 
@@ -41,10 +44,9 @@ const mapStores = async (latitude, longitude) => {
     ${message[0].message}    
     ${promotionsText}    
     `;
-  console.log(txt);
   return txt;
 };
 
-mapStores(0, 0);
+// mapStores(-19.8157306, -43.9542226);
 
 module.exports.mapStores = mapStores;

@@ -14,7 +14,7 @@ bot.on('text', async (msg) => {
       keyboard: [[{
         text: 'Compartilhar Localização',
         request_location: true,
-      }], ['Cancelar']],
+      }]],
     },
   });
 });

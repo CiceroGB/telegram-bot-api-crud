@@ -8,8 +8,6 @@ const searchPromotion = (store) => axios.get(`${process.env.APP_URL}${process.en
 
     },
   })
-  .then((response) => response.data);
-
-searchPromotion(5);
+  .then((response) => response.data, () => 'error');
 
 module.exports.searchPromotion = searchPromotion;
