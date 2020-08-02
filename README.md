@@ -5,12 +5,12 @@
 Telegram Chatbot, onde o usuário ao compartilhar sua localização:
 
 
-Se dentro de uma loja Carrefour traz uma mensagem daquela Loja e promoções exclusivas para o usuário.
+Se não estiver dentro de uma loja Carrefour trará a localização da loja Carrefour mais perto.
 
 ![](https://media.giphy.com/media/J5pz2cuqRiPQe1etRr/giphy.gif)
 
 
-Se não estiver dentro de uma loja Carrefour trará a localização da loja Carrefour mais perto.
+Se dentro de uma loja Carrefour traz uma mensagem daquela Loja e promoções exclusivas para o usuário.
 
 ![](https://media.giphy.com/media/S7DiqHQGNI44h7zkwI/giphy.gif)
 
