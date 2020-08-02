@@ -24,15 +24,21 @@ const mapStores = async (latitude, longitude) => {
 
   const promotionsArray = await promotions.searchPromotion(near.site);
 
+  let promotionsText = 'Nenhuma oferta para esta unidade no momento :(';
+
+  if (promotionsArray.length > 0) {
+    promotionsText = `${promotionsArray.map((o) => `${o.product} de ${new Intl.NumberFormat('pt-BR',
+      { style: 'currency', currency: 'BRL' }).format(o.price)} por ${new Intl.NumberFormat('pt-BR',
+      { style: 'currency', currency: 'BRL' }).format(o.promotional_price)} `)}
+    Para aproveitar essas ofertas basta mostrar a essa mensagem no caixa    `;
+  }
+
   const message = await messages.searchMessage(near.site);
 
   const txt = `Bem vindo a loja ${near.name};
     ${message[0].message}
     Oferta exclusiva: 
-      ${promotionsArray.map((o) => `${o.product} de ${new Intl.NumberFormat('pt-BR',
-    { style: 'currency', currency: 'BRL' }).format(o.price)} por ${new Intl.NumberFormat('pt-BR',
-    { style: 'currency', currency: 'BRL' }).format(o.promotional_price)} `)}
-    Para aproveitar essas ofertas basta informar o código 842jj99 no caixa    
+    ${promotionsText}    
     `;
   console.log(txt);
   return txt;
