@@ -6,7 +6,7 @@
   "author": "Cicero Brunelli <cicero.brunelli@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "node-telegram-bot-api": "^0.50.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
